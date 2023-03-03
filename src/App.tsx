@@ -5,8 +5,11 @@ import Login from "./screens/Login";
 import About from "./screens/About";
 import Contact from "./screens/Contact";
 import Cases from "./screens/Cases";
+import AppContext, { AppContextProvider } from "./AppContext";
+import { useContext } from "react";
 
 function App() {
+  const { user } = useContext(AppContext);
   return (
     <BrowserRouter>
       <div className="App">
@@ -19,9 +22,7 @@ function App() {
               <li>
                 <Link to="/login">Login</Link>
               </li>
-              <li>
-                <Link to="/cases">Cases</Link>
-              </li>
+              <li>{user !== null && <Link to="/cases">Cases</Link>}</li>
               <li>
                 <Link to="/about">About</Link>
               </li>
@@ -62,4 +63,10 @@ function App() {
   );
 }
 
-export default App;
+export default () => {
+  return (
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+  );
+};
