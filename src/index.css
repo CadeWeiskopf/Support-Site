@@ -70,3 +70,9 @@ nav li a {
 nav li a:hover {
   background-color: #302f2f;
 }
+
+svg {
+  width: 32px;
+  height: 32px;
+  vertical-align: bottom;
+}
