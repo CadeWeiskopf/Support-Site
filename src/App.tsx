@@ -4,6 +4,7 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import About from "./screens/About";
 import Contact from "./screens/Contact";
+import Cases from "./screens/Cases";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
               </li>
               <li>
                 <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/cases">Cases</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
@@ -37,6 +41,10 @@ function App() {
             <Route
               path="/login"
               component={Login}
+            />
+            <Route
+              path="/cases"
+              component={Cases}
             />
             <Route
               path="/about"
