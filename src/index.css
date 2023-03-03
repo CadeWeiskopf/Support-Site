@@ -76,3 +76,20 @@ svg {
   height: 32px;
   vertical-align: bottom;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input,
+button {
+  padding: 1rem;
+}
+
+button {
+  background-color: #111;
+  color: #fff;
+  font-size: 24px;
+}
