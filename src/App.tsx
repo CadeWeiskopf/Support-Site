@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from "react-browser-router";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import About from "./screens/About";
+import Contact from "./screens/Contact";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
               </li>
               <li>
                 <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
@@ -37,6 +41,10 @@ function App() {
             <Route
               path="/about"
               component={About}
+            />
+            <Route
+              path="/contact"
+              component={Contact}
             />
           </div>
         </main>
