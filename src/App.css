@@ -11,18 +11,19 @@
 .main-div {
   width: 75%;
 }
-
-.main-div > h2 {
+.main-div > * {
   padding: 0 4rem 0 4rem;
+}
+.main-div > h2 {
   border-bottom: 1px solid white;
 }
 @media screen and (max-width: 1200px) {
-  .main-div > h2 {
+  .main-div > * {
     padding: 0 2rem 0 2rem;
   }
 }
 @media screen and (max-width: 1024px) {
-  .main-div > h2 {
+  .main-div > * {
     padding: 0 0 0 0;
   }
 }

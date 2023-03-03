@@ -29,6 +29,10 @@ main {
   display: flex;
   justify-content: center;
 }
+main p {
+  overflow-wrap: anywhere;
+  word-wrap: anywhere;
+}
 
 nav {
   width: 75%;
