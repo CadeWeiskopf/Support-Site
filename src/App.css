@@ -15,3 +15,13 @@
 .main-div > h2 {
   padding: 0 4rem 0 4rem;
 }
+@media screen and (max-width: 1200px) {
+  .main-div > h2 {
+    padding: 0 2rem 0 2rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-div > h2 {
+    padding: 0 0 0 0;
+  }
+}
