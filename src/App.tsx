@@ -7,6 +7,7 @@ import Contact from "./screens/Contact";
 import Cases from "./screens/Cases";
 import AppContext, { AppContextProvider } from "./AppContext";
 import { useContext } from "react";
+import Account from "./screens/Account";
 
 function App() {
   const { user } = useContext(AppContext);
@@ -20,7 +21,11 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/login">Login</Link>
+                {user === null ? (
+                  <Link to="/login">Login</Link>
+                ) : (
+                  <Link to="/account">Account</Link>
+                )}
               </li>
               <li>{user !== null && <Link to="/cases">Cases</Link>}</li>
               <li>
@@ -42,6 +47,10 @@ function App() {
             <Route
               path="/login"
               component={Login}
+            />
+            <Route
+              path="/account"
+              component={Account}
             />
             <Route
               path="/cases"
