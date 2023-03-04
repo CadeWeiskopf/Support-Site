@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Case } from "./interfaces/Case";
 import { User } from "./interfaces/User";
 
 interface AppContextProps {
@@ -9,9 +10,11 @@ interface AppContextProps {
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
   popupMessage: string;
-  setPopupMessage: (value: string) => void;
+  setPopupMessage: React.Dispatch<React.SetStateAction<string>>;
   showPopup: boolean;
-  setShowPopup: (value: boolean) => void;
+  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  cases: Case[] | null;
+  setCases: React.Dispatch<React.SetStateAction<Case[] | null>>;
 }
 
 const AppContext = React.createContext<AppContextProps>({
@@ -25,6 +28,8 @@ const AppContext = React.createContext<AppContextProps>({
   setPopupMessage: () => {},
   showPopup: false,
   setShowPopup: () => {},
+  cases: null,
+  setCases: () => {},
 });
 
 const AppContextProvider = (props: any) => {
@@ -33,6 +38,7 @@ const AppContextProvider = (props: any) => {
   const [user, setUser] = useState<User | null>(null);
   const [popupMessage, setPopupMessage] = useState<string>("");
   const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [cases, setCases] = useState<Case[] | null>(null);
   return (
     <AppContext.Provider
       value={{
@@ -46,6 +52,8 @@ const AppContextProvider = (props: any) => {
         setPopupMessage,
         showPopup,
         setShowPopup,
+        cases,
+        setCases,
       }}
     >
       {props.children}

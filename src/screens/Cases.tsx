@@ -1,8 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AppContext from "../AppContext";
 
 export default function Cases() {
   const { user } = useContext(AppContext);
+
+  useEffect(() => {
+    if (user === null) {
+      return;
+    }
+  }, []);
+
   if (user === null) {
     return (
       <p>
@@ -10,6 +17,7 @@ export default function Cases() {
       </p>
     );
   }
+
   return (
     <>
       <h2>Cases</h2>
