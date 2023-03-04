@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../AppContext";
-import { Case } from "../interfaces/Case";
 
 export default function Cases() {
   const { user, apiRequester, setCases, cases, selectedCase, setSelectedCase } =
