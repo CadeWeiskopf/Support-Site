@@ -33,7 +33,7 @@ export default function Cases() {
             <p
               key={`case${index}`}
               className="case-list-element"
-              onClick={(e) => {
+              onClick={async (e) => {
                 if (selectedCase !== null) {
                   return;
                 }
@@ -46,6 +46,8 @@ export default function Cases() {
                 }
                 targetNode.classList.add(`selected`);
                 setSelectedCase(c);
+                await new Promise((resolve) => setTimeout(resolve, 250));
+                navigate(`/case/${c.id}/${c.guid}`);
               }}
             >
               <div className="case-container-div">
