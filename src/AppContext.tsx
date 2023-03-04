@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Case } from "./interfaces/Case";
 import { User } from "./interfaces/User";
+import { ApiRequests } from "./ApiRequests";
 
 interface AppContextProps {
   isLoading: boolean;
@@ -15,6 +16,7 @@ interface AppContextProps {
   setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
   cases: Case[] | null;
   setCases: React.Dispatch<React.SetStateAction<Case[] | null>>;
+  apiRequester: ApiRequests;
 }
 
 const AppContext = React.createContext<AppContextProps>({
@@ -30,6 +32,7 @@ const AppContext = React.createContext<AppContextProps>({
   setShowPopup: () => {},
   cases: null,
   setCases: () => {},
+  apiRequester: new ApiRequests(),
 });
 
 const AppContextProvider = (props: any) => {
@@ -39,6 +42,7 @@ const AppContextProvider = (props: any) => {
   const [popupMessage, setPopupMessage] = useState<string>("");
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [cases, setCases] = useState<Case[] | null>(null);
+  const [apiRequester] = useState<ApiRequests>(new ApiRequests());
   return (
     <AppContext.Provider
       value={{
@@ -54,6 +58,7 @@ const AppContextProvider = (props: any) => {
         setShowPopup,
         cases,
         setCases,
+        apiRequester,
       }}
     >
       {props.children}

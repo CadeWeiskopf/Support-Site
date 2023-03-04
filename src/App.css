@@ -37,3 +37,22 @@
 .login-form {
   max-width: 400px;
 }
+
+.selectable-element {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.selectable-element:hover {
+  background-color: #f7f7f7;
+  color: #111;
+}
+
+.selectable-element.selected {
+  background-color: #4caf50;
+  color: #fff;
+}

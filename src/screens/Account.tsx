@@ -10,7 +10,6 @@ export default function Account() {
       </p>
     );
   }
-  console.log(user);
   return (
     <>
       <h2>Account</h2>
