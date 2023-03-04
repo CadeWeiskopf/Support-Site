@@ -32,7 +32,7 @@ export default function Cases() {
   return (
     <>
       <h2>Cases</h2>
-      <div className="form-div">
+      <div className="case-list-div">
         {cases?.map((c, index) => {
           return (
             <p

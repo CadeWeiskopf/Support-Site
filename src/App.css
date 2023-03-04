@@ -38,6 +38,12 @@
   max-width: 400px;
 }
 
+.case-list-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .case-list-element {
   display: inline-block;
   padding: 10px;
@@ -45,13 +51,13 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 600px;
 }
-
 .case-list-element:hover {
   background-color: #f7f7f7;
   color: #111;
 }
-
 .case-list-element.selected {
   background-color: #4caf50;
   color: #fff;
