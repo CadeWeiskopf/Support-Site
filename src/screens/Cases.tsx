@@ -42,8 +42,14 @@ export default function Cases() {
                 if (selectedCase !== null) {
                   return;
                 }
-                console.log(`clicked`, e, c);
-                (e.target as HTMLElement).classList.add(`selected`);
+                let targetNode = e.target as HTMLElement;
+                while (
+                  targetNode.classList[0] !== `case-list-element` &&
+                  targetNode.parentElement
+                ) {
+                  targetNode = targetNode.parentElement;
+                }
+                targetNode.classList.add(`selected`);
                 setSelectedCase(c);
               }}
             >
