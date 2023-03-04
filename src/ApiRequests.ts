@@ -1,5 +1,9 @@
 class ApiRequests {
-  constructor() {}
+  constructor() {
+    if (!process.env.REACT_APP_API_URL) {
+      throw Error(`Missing environment variables`);
+    }
+  }
 
   async getCases() {
     return [
