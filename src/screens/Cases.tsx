@@ -5,13 +5,16 @@ import AppContext from "../AppContext";
 export default function Cases() {
   const { user, apiRequester, setCases, cases, selectedCase, setSelectedCase } =
     useContext(AppContext);
+
   const navigate = useNavigate();
+
   useEffect(() => {
     if (user === null) {
       navigate(`/login`);
       return;
     }
   }, [navigate]);
+
   useEffect(() => {
     const getCases = async () => {
       const cases = await apiRequester.getCases();
@@ -20,14 +23,6 @@ export default function Cases() {
     getCases();
     return () => setSelectedCase(null);
   }, []);
-
-  if (user === null) {
-    return (
-      <p>
-        You are not signed in. Please <a href="/login">login</a>.
-      </p>
-    );
-  }
 
   return (
     <>
