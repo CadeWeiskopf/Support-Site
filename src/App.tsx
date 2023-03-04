@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Link } from "react-browser-router";
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import About from "./screens/About";
@@ -39,31 +39,32 @@ function App() {
         </header>
         <main>
           <div className="main-div">
-            <Route
-              exact
-              path="/"
-              component={Home}
-            />
-            <Route
-              path="/login"
-              component={Login}
-            />
-            <Route
-              path="/account"
-              component={Account}
-            />
-            <Route
-              path="/cases"
-              component={Cases}
-            />
-            <Route
-              path="/about"
-              component={About}
-            />
-            <Route
-              path="/contact"
-              component={Contact}
-            />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/account"
+                element={<Account />}
+              />
+              <Route
+                path="/cases"
+                element={<Cases />}
+              />
+              <Route
+                path="/about"
+                element={<About />}
+              />
+              <Route
+                path="/contact"
+                element={<Contact />}
+              />
+            </Routes>
           </div>
         </main>
         <footer>

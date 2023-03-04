@@ -1,8 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AppContext from "../AppContext";
+import { Case } from "../interfaces/Case";
 
 export default function Cases() {
   const { user, apiRequester, setCases, cases } = useContext(AppContext);
+  const [selectedCase, setSelectedCase] = useState<Case | null>(null);
 
   useEffect(() => {
     if (user === null) {
@@ -33,8 +35,12 @@ export default function Cases() {
               key={`case${index}`}
               className="selectable-element"
               onClick={(e) => {
+                if (selectedCase !== null) {
+                  return;
+                }
                 console.log(`clicked`, e, c);
                 (e.target as HTMLElement).classList.add(`selected`);
+                setSelectedCase(c);
               }}
             >
               {JSON.stringify(c)}
