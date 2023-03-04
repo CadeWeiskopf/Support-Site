@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import AppContext from "../AppContext";
 import { User } from "../interfaces/User";
-import { Link } from "react-browser-router";
+import { useNavigate } from "react-router-dom";
 
 const formSubmit = async (
   setUser: React.Dispatch<React.SetStateAction<User | null>>
@@ -17,9 +17,12 @@ const formSubmit = async (
 
 export default function Login() {
   const { user, setUser } = useContext(AppContext);
-  if (user !== null) {
-    return <p>Successfully logged in.</p>;
-  }
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user !== null) {
+      navigate(`/`);
+    }
+  }, [navigate]);
   return (
     <>
       <h2>Login</h2>

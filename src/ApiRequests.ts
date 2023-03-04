@@ -12,6 +12,7 @@ class ApiRequests {
         repGuid: "string",
         customerId: "string",
         customerGuid: "string",
+        status: "open",
       },
       {
         id: "string1",
@@ -22,6 +23,7 @@ class ApiRequests {
         repGuid: "string1",
         customerId: "string1",
         customerGuid: "string1",
+        status: "open",
       },
       {
         id: "string2",
@@ -32,6 +34,7 @@ class ApiRequests {
         repGuid: "string2",
         customerId: "string2",
         customerGuid: "string2",
+        status: "open",
       },
       {
         id: "string",
@@ -42,6 +45,7 @@ class ApiRequests {
         repGuid: "string",
         customerId: "string",
         customerGuid: "string",
+        status: "open",
       },
       {
         id: "string1",
@@ -52,6 +56,7 @@ class ApiRequests {
         repGuid: "string1",
         customerId: "string1",
         customerGuid: "string1",
+        status: "open",
       },
       {
         id: "string2",
@@ -62,6 +67,7 @@ class ApiRequests {
         repGuid: "string2",
         customerId: "string2",
         customerGuid: "string2",
+        status: "open",
       },
       {
         id: "string",
@@ -72,6 +78,7 @@ class ApiRequests {
         repGuid: "string",
         customerId: "string",
         customerGuid: "string",
+        status: "open",
       },
       {
         id: "string1",
@@ -82,6 +89,7 @@ class ApiRequests {
         repGuid: "string1",
         customerId: "string1",
         customerGuid: "string1",
+        status: "open",
       },
       {
         id: "string2",
@@ -92,6 +100,7 @@ class ApiRequests {
         repGuid: "string2",
         customerId: "string2",
         customerGuid: "string2",
+        status: "open",
       },
       {
         id: "string",
@@ -102,6 +111,7 @@ class ApiRequests {
         repGuid: "string",
         customerId: "string",
         customerGuid: "string",
+        status: "open",
       },
       {
         id: "string1",
@@ -112,6 +122,7 @@ class ApiRequests {
         repGuid: "string1",
         customerId: "string1",
         customerGuid: "string1",
+        status: "open",
       },
       {
         id: "string2",
@@ -122,6 +133,7 @@ class ApiRequests {
         repGuid: "string2",
         customerId: "string2",
         customerGuid: "string2",
+        status: "open",
       },
     ];
   }

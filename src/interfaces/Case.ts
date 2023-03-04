@@ -7,4 +7,5 @@ export interface Case {
   repGuid: string;
   customerId: string;
   customerGuid: string;
+  status: string;
 }
