@@ -33,7 +33,7 @@ export default function Cases() {
               key={`case${index}`}
               className="selectable-element"
               onClick={(e) => {
-                console.log(`clicked`, e);
+                console.log(`clicked`, e, c);
                 (e.target as HTMLElement).classList.add(`selected`);
               }}
             >
