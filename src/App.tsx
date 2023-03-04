@@ -8,6 +8,7 @@ import Cases from "./screens/Cases";
 import AppContext, { AppContextProvider } from "./AppContext";
 import { useContext } from "react";
 import Account from "./screens/Account";
+import Case from "./screens/Case";
 
 function App() {
   const { user } = useContext(AppContext);
@@ -55,6 +56,10 @@ function App() {
               <Route
                 path="/cases"
                 element={<Cases />}
+              />
+              <Route
+                path="/case/:id/:guid"
+                element={<Case />}
               />
               <Route
                 path="/about"
