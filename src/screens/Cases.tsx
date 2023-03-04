@@ -47,7 +47,28 @@ export default function Cases() {
                 setSelectedCase(c);
               }}
             >
-              {JSON.stringify(c)}
+              <div className="case-container-div">
+                <div className="case-container-box-div">Case #{c.number}</div>
+                <div className="case-container-box-div">Status: {c.status}</div>
+                <div className="case-container-box-div">
+                  <small>
+                    Created{" "}
+                    {c.dateCreated.toLocaleString("en-US", {
+                      month: "numeric",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </small>
+                </div>
+                <div className="case-container-box-div">
+                  {c.dateClosed &&
+                    `Date Created: ${c.dateCreated.toLocaleString("en-US", {
+                      month: "numeric",
+                      day: "numeric",
+                      year: "numeric",
+                    })}`}
+                </div>
+              </div>
             </p>
           );
         })}
