@@ -18,6 +18,7 @@ export default function Cases() {
       setCases(cases);
     };
     getCases();
+    return () => setSelectedCase(null);
   }, []);
 
   if (user === null) {
