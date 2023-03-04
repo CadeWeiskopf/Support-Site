@@ -16,6 +16,8 @@ interface AppContextProps {
   setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
   cases: Case[] | null;
   setCases: React.Dispatch<React.SetStateAction<Case[] | null>>;
+  selectedCase: Case | null;
+  setSelectedCase: React.Dispatch<React.SetStateAction<Case | null>>;
   apiRequester: ApiRequests;
 }
 
@@ -32,6 +34,8 @@ const AppContext = React.createContext<AppContextProps>({
   setShowPopup: () => {},
   cases: null,
   setCases: () => {},
+  selectedCase: null,
+  setSelectedCase: () => {},
   apiRequester: new ApiRequests(),
 });
 
@@ -42,6 +46,7 @@ const AppContextProvider = (props: any) => {
   const [popupMessage, setPopupMessage] = useState<string>("");
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [cases, setCases] = useState<Case[] | null>(null);
+  const [selectedCase, setSelectedCase] = useState<Case | null>(null);
   const [apiRequester] = useState<ApiRequests>(new ApiRequests());
   return (
     <AppContext.Provider
@@ -58,6 +63,8 @@ const AppContextProvider = (props: any) => {
         setShowPopup,
         cases,
         setCases,
+        selectedCase,
+        setSelectedCase,
         apiRequester,
       }}
     >

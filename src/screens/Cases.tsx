@@ -4,8 +4,8 @@ import AppContext from "../AppContext";
 import { Case } from "../interfaces/Case";
 
 export default function Cases() {
-  const { user, apiRequester, setCases, cases } = useContext(AppContext);
-  const [selectedCase, setSelectedCase] = useState<Case | null>(null);
+  const { user, apiRequester, setCases, cases, selectedCase, setSelectedCase } =
+    useContext(AppContext);
   const navigate = useNavigate();
   useEffect(() => {
     if (user === null) {
