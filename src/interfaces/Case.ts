@@ -1,6 +1,7 @@
 export interface Case {
   id: string;
   guid: string;
+  number: string;
   dateCreated: Date;
   dateClosed: Date | null;
   repId: string;
