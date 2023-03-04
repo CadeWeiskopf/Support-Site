@@ -22,7 +22,7 @@ export default function Login() {
     if (user !== null) {
       navigate(`/`);
     }
-  }, [navigate]);
+  }, [navigate, user]);
   return (
     <>
       <h2>Login</h2>
