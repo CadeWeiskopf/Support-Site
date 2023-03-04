@@ -15,5 +15,9 @@ export default function Case() {
   useEffect(() => {
     console.log(`get case ${id}, ${guid} & validate user`);
   }, []);
-  return <></>;
+  return (
+    <>
+      <h2>Case #</h2>
+    </>
+  );
 }
