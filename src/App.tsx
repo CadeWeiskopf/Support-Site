@@ -72,9 +72,7 @@ function App() {
             </Routes>
           </div>
         </main>
-        <footer>
-          <small>Brought to you by, Cade Weiskopf - All rights reserved.</small>
-        </footer>
+        <footer>Brought to you by, Cade Weiskopf - All rights reserved.</footer>
       </div>
     </BrowserRouter>
   );
