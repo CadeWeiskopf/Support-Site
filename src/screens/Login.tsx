@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AppContext from "../AppContext";
 import { User } from "../interfaces/User";
+import { Link } from "react-browser-router";
 
 const formSubmit = async (
   setUser: React.Dispatch<React.SetStateAction<User | null>>
@@ -15,7 +16,10 @@ const formSubmit = async (
 };
 
 export default function Login() {
-  const { setUser } = useContext(AppContext);
+  const { user, setUser } = useContext(AppContext);
+  if (user !== null) {
+    return <p>Successfully logged in.</p>;
+  }
   return (
     <>
       <h2>Login</h2>
