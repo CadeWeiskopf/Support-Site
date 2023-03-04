@@ -38,7 +38,7 @@
   max-width: 400px;
 }
 
-.selectable-element {
+.case-list-element {
   display: inline-block;
   padding: 10px;
   border: 2px solid #ccc;
@@ -47,12 +47,12 @@
   transition: background-color 0.3s ease;
 }
 
-.selectable-element:hover {
+.case-list-element:hover {
   background-color: #f7f7f7;
   color: #111;
 }
 
-.selectable-element.selected {
+.case-list-element.selected {
   background-color: #4caf50;
   color: #fff;
 }

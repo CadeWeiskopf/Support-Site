@@ -32,12 +32,12 @@ export default function Cases() {
   return (
     <>
       <h2>Cases</h2>
-      <>
+      <div className="form-div">
         {cases?.map((c, index) => {
           return (
             <p
               key={`case${index}`}
-              className="selectable-element"
+              className="case-list-element"
               onClick={(e) => {
                 if (selectedCase !== null) {
                   return;
@@ -51,7 +51,7 @@ export default function Cases() {
             </p>
           );
         })}
-      </>
+      </div>
     </>
   );
 }
