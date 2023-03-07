@@ -7,6 +7,7 @@ export default function Cases() {
     useContext(AppContext);
 
   const [showFilters, setShowFilters] = useState(false);
+  const [allCases, setAllCases] = useState(cases);
 
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ export default function Cases() {
     const getCases = async () => {
       const cases = await apiRequester.getCases();
       setCases(cases);
+      setAllCases(cases);
     };
     getCases();
     return () => setSelectedCase(null);
@@ -50,7 +52,10 @@ export default function Cases() {
               className="filter-input"
               type="number"
               onChange={(e) => {
-                console.log(e.target.value);
+                const filteredCases = allCases?.filter(
+                  (c) => c.number.indexOf(e.target.value) > -1
+                );
+                setCases(filteredCases || null);
               }}
             />
           </div>
