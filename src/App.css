@@ -104,6 +104,8 @@
   padding-right: 5px;
 }
 .filter-input {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cases-options-div {
