@@ -6,6 +6,8 @@ export default function Cases() {
   const { user, apiRequester, setCases, cases, selectedCase, setSelectedCase } =
     useContext(AppContext);
 
+  const [showFilters, setShowFilters] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,6 +29,18 @@ export default function Cases() {
   return (
     <>
       <h2>Cases</h2>
+      <div className="case-filter-label-div">
+        <button
+          className="filters-button"
+          type="button"
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          Filters
+        </button>
+      </div>
+      {showFilters && (
+        <div className="case-filter-div">TODO: filter options</div>
+      )}
       <div className="case-list-div">
         {cases?.map((c, index) => {
           return (
