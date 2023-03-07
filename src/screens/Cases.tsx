@@ -49,7 +49,9 @@ export default function Cases() {
               id="casenumber-id"
               className="filter-input"
               type="number"
-              onChange={() => {}}
+              onChange={(e) => {
+                console.log(e.target.value);
+              }}
             />
           </div>
         )}
@@ -57,7 +59,7 @@ export default function Cases() {
       <div className="case-list-div">
         {cases?.map((c, index) => {
           return (
-            <p
+            <div
               key={`case${index}`}
               className="case-list-element"
               onClick={async (e) => {
@@ -99,7 +101,7 @@ export default function Cases() {
                     })}`}
                 </div>
               </div>
-            </p>
+            </div>
           );
         })}
       </div>
