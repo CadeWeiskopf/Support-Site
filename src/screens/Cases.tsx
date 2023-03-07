@@ -29,7 +29,7 @@ export default function Cases() {
   return (
     <>
       <h2>Cases</h2>
-      <div className="case-filter-label-div">
+      <div className="case-filter-div">
         <button
           className="filters-button"
           type="button"
@@ -37,10 +37,23 @@ export default function Cases() {
         >
           Filters
         </button>
+        {showFilters && (
+          <div className="filter-container">
+            <label
+              htmlFor="casenumber-id"
+              className="filter-label"
+            >
+              Case #
+            </label>
+            <input
+              id="casenumber-id"
+              className="filter-input"
+              type="number"
+              onChange={() => {}}
+            />
+          </div>
+        )}
       </div>
-      {showFilters && (
-        <div className="case-filter-div">TODO: filter options</div>
-      )}
       <div className="case-list-div">
         {cases?.map((c, index) => {
           return (
