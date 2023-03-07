@@ -7,7 +7,10 @@ export default function Home() {
       <h2>Home</h2>
       <div>
         <p>Welcome</p>
-        <Card bg="danger">
+        <Card
+          bg="danger"
+          className="card"
+        >
           <Card.Img
             variant="top"
             src="https://connectedsolutionsgroup.com/wp-content/themes/yootheme/cache/csg-mobile-hero-67f87b9f.jpeg"

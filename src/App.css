@@ -110,3 +110,7 @@
 
 .cases-options-div {
 }
+
+.card {
+  max-width: 400px;
+}
