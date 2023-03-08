@@ -12,13 +12,16 @@ class ApiRequests {
     if (!process.env.REACT_APP_API_URL) {
       throw Error(`Missing environment variables`);
     }
-    const response = await fetch(process.env.REACT_APP_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}&endpoint=users`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
     if (!response.ok || response.status !== 200) {
       throw Error(`Bad request/response.`);
     }
