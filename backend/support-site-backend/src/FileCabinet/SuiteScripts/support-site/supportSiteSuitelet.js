@@ -20,6 +20,13 @@ define(["N/log", "N/record", "N/search"], (log, record, search) => {
       value: "GET,POST",
     });
     log.debug(`request`, scriptContext);
+    const { clientIpAddress } = scriptContext.request;
+    const { endpoint } = scriptContext.request.parameters;
+    log.debug(
+      clientIpAddress,
+      `${scriptContext.request.method} @ /${endpoint}`
+    );
+
     scriptContext.response.write(JSON.stringify({ ok: true }));
   };
 
