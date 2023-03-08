@@ -1,8 +1,15 @@
+import { User } from "./interfaces/User";
+
 class ApiRequests {
   constructor() {
     if (!process.env.REACT_APP_API_URL) {
       throw Error(`Missing environment variables`);
     }
+  }
+
+  async login(email: string, password: string): Promise<User | null> {
+    console.log(`login`);
+    return null;
   }
 
   async getCases() {

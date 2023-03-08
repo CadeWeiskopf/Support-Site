@@ -2,21 +2,30 @@ import { useContext, useEffect } from "react";
 import AppContext from "../AppContext";
 import { User } from "../interfaces/User";
 import { useNavigate } from "react-router-dom";
+import { ApiRequests } from "../ApiRequests";
 
 const formSubmit = async (
-  setUser: React.Dispatch<React.SetStateAction<User | null>>
+  setUser: React.Dispatch<React.SetStateAction<User | null>>,
+  apiRequester: ApiRequests
 ) => {
   console.log(`submit`);
-  setUser({
+  const email = (document.getElementsByName(`email`)[0] as HTMLInputElement)
+    .value;
+  const password = (
+    document.getElementsByName(`password`)[0] as HTMLInputElement
+  ).value;
+  const user = await apiRequester.login(email, password);
+  setUser(user);
+  /*setUser({
     id: "1",
     firstName: "test",
     lastName: "jones",
     email: "test@test.com",
-  });
+  });*/
 };
 
 export default function Login() {
-  const { user, setUser } = useContext(AppContext);
+  const { user, setUser, apiRequester } = useContext(AppContext);
   const navigate = useNavigate();
   useEffect(() => {
     if (user !== null) {
@@ -31,7 +40,7 @@ export default function Login() {
           className="login-form"
           onSubmit={(e) => {
             e.preventDefault();
-            formSubmit(setUser);
+            formSubmit(setUser, apiRequester);
           }}
         >
           <input
