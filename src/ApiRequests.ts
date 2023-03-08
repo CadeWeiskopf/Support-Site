@@ -9,7 +9,21 @@ class ApiRequests {
 
   async login(email: string, password: string): Promise<User | null> {
     console.log(`login`);
-    return null;
+    if (!process.env.REACT_APP_API_URL) {
+      throw Error(`Missing environment variables`);
+    }
+    const response = await fetch(process.env.REACT_APP_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    if (!response.ok || response.status !== 200) {
+      throw Error(`Bad request/response.`);
+    }
+    const data = await response.json();
+    return data;
   }
 
   async getCases() {
