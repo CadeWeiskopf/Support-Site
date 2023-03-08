@@ -19,6 +19,10 @@ define(["N/log", "N/record", "N/search"], (log, record, search) => {
       name: "Access-Control-Allow-Methods",
       value: "GET,POST",
     });
+    scriptContext.response.addHeader({
+      name: "Access-Control-Allow-Headers",
+      value: "Content-Type",
+    });
     log.debug(`request`, scriptContext);
     const { clientIpAddress } = scriptContext.request;
     const { endpoint } = scriptContext.request.parameters;
